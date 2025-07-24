@@ -2,26 +2,22 @@
 
 namespace App\View\Components;
 
-use Closure;
-use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
 class PokemonTable extends Component
 {
-    public mixed $pokemonNames;
+    public Collection $pokemons;
 
-    public function __construct($pokemonNames)
+    public function __construct($pokemons)
     {
-        $this->pokemonNames = $pokemonNames;
+        $this->pokemons = $pokemons;
     }
 
-    public function render(): View|Closure|string
+    public function render()
     {
-        return view(
-            'components.pokedex.pokemon-table',
-            [
-                'pokemonNames' => $this->pokemonNames,
-            ]
-        );
+        return view('components.pokedex.pokemon-table', [
+            'pokemons' => $this->pokemons,
+        ]);
     }
 }

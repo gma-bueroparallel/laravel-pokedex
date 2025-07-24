@@ -36,7 +36,10 @@ class ImportData extends Command
         }
 
         $this->info("Starting to import Pokemons.");
+
         $pokemonImporter = new PokemonImporter();
         $pokemonImporter->importPokemonNames($pokemons);
+
+        $this->info("Finished Importing Pokemons.");
     }
 }

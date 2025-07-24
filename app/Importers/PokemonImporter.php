@@ -10,12 +10,16 @@ class PokemonImporter
     {
         foreach ($pokemon as $data) {
             $name = $data['name'];
+            $level = $data['level'];
 
-            $this->importPokemonIfNotExists($name);
+            $this->importPokemonIfNotExists($name, $level);
         }
     }
 
-    private function importPokemonIfNotExists($name): void {
-        Pokemon::firstOrCreate(['name' => $name]);
+    private function importPokemonIfNotExists($name, $level): void {
+        Pokemon::updateOrCreate(
+            ['name' => $name],
+            ['level' => $level]
+        );
     }
 }

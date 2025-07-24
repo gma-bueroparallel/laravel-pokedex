@@ -17,9 +17,11 @@ class JsonExtractor
 
         foreach ($this->jsonData['pokemons'] as $pokemon) {
             $name = $pokemon['name'];
+            $level = $pokemon['level'];
 
             $pokemons[] = [
                 'name' => $name,
+                'level' => $level,
             ];
         }
 

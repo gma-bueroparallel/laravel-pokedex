@@ -2,12 +2,14 @@
     <thead>
         <tr>
             <th>Name</th>
+            <th>Level</th>
         </tr>
     </thead>
     <tbody>
-    @foreach($pokemonNames as $name)
+    @foreach ($pokemons as $pokemon)
         <tr>
-            <td>{{ $name }}</td>
+            <td>{{ $pokemon->name }}</td>
+            <td>{{ $pokemon->level }}</td>
         </tr>
     @endforeach
     </tbody>
