@@ -28,11 +28,6 @@ export default ({ mode }: ConfigEnv): UserConfig => {
                 ],
                 refresh: true,
             }),
-            viteStaticCopy({
-                targets: [
-                    { src: 'resources/assets/img', dest: 'assets/img' },
-                ],
-            }),
         ],
         resolve: {
             alias: {
